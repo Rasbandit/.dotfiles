@@ -3,6 +3,7 @@ alias ll='ls -AlF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ldir='ls -d */'
+alias cdg='cd ~/Documents/gala'
 
 # Kubernetes
 alias k='kubectl'

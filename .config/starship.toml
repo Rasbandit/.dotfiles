@@ -2,7 +2,7 @@
 
 format = """$nodejs$package$git_branch$git_commit$git_status
 (bold green)$directory $cmd_duration
-$character"""
+$username$character"""
 
 [battery]
 full_symbol = "🔋"
@@ -56,7 +56,7 @@ ssh_only = false
 format = "<[$hostname]($style)>"
 trim_at = "-"
 style = "bold dimmed white"
-disabled = true
+disabled = false
 
 [julia]
 format = "[$symbol$version]($style) "
@@ -72,17 +72,18 @@ disabled = false
 [package]
 disabled = true
 
-[python]
-format = "[$symbol$version]($style) "
-style = "bold green"
-
-[rust]
-format = "[$symbol$version]($style) "
-style = "bold green"
-
 [username]
 style_user = "bold dimmed blue"
-show_always = false
+show_always = true
 
 [nodejs]
 format = "🐸 [$version](bold green) "
+
+[kubernetes]
+format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+disabled = false
+
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+".*/openshift-cluster/.*" = "openshift"
+"gke_.*_(?P<var_cluster>[\\w-]+)" = "gke-$var_cluster"
